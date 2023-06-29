@@ -39,6 +39,16 @@ public class ProdutoDAO{
 			con = DriverManager.getConnection(url,"","");
 			System.out.println("Conexão com o banco de dados realizada!");
 			Produto prod = new Produto();
-		
+
+			sql = "delete from produto where codigo=?";
+			ps = con.prepareStament(sql);
+			ps.setString(1,prod.getCodigo());
+			
+			ResultSet rs = ps.executyQuery();
+	}catch(ClassNotFoundException e) {
+			System.out.println("Driver não encontrado!");
+			
+	}catch(SQLException e) {
+		System.out.println("Não foi posssível acessar o banco de dados!");
 	}
 }
