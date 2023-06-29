@@ -32,4 +32,13 @@ public class ProdutoDAO{
 			System.out.println("Não foi posssível acessar o banco de dados!");
 		}
 	}
+
+	public void remover() {
+		try{
+			Class.forName(driver);
+			con = DriverManager.getConnection(url,"","");
+			System.out.println("Conexão com o banco de dados realizada!");
+			Produto prod = new Produto();
+		
+	}
 }
